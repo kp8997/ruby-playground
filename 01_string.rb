@@ -9,7 +9,7 @@ print "#{x} \n" + "\n" + "\n" + "\n" + "\n"
 
 
 def says(str)
-	puts str
+	puts str˛
 end
 
 says "wack"
