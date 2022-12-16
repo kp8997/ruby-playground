@@ -18,16 +18,17 @@ while attempts.positive?
   print 'Password:'
   password = gets.chomp
   puts
-  u = users.select { |user| user.username == username && user.password == password }
+  u = users.select { |user| user[:username] == username && user[:password] == password }
   if u.empty?
     puts 'User not found'
-    puts "press any to continue or press \'n\' to stop"
+    puts
+    puts "Press any to continue or press \'n\' to stop"
     promt = gets.chomp
     if promt == 'n'
       puts 'Program will stop shortly'
       break
     else
-      attempts - -
+      attempts -= 1
       next
     end
   else
@@ -36,3 +37,4 @@ while attempts.positive?
     break
   end
 end
+puts 'Program will exit due to run out attempts'
