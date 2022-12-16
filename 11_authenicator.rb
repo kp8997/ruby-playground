@@ -12,10 +12,10 @@ puts 'Welcome'
 attempts = 4
 while attempts.positive?
   puts ''
-  print 'Username:'
+  print 'Username: '
   username = gets.chomp
   puts
-  print 'Password:'
+  print 'Password: '
   password = gets.chomp
   puts
   u = users.select { |user| user[:username] == username && user[:password] == password }
@@ -34,7 +34,7 @@ while attempts.positive?
   else
     puts 'Successfully authenticated'
     puts u
-    break
+    exit
   end
 end
 puts 'Program will exit due to run out attempts'
