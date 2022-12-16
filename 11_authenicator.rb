@@ -13,17 +13,17 @@ attempts = 4
 while attempts.positive?
   puts ''
   print 'Username: '
-  username = gets.chomp
+  username = gets.chomp.downcase
   puts
   print 'Password: '
-  password = gets.chomp
+  password = gets.chomp.downcase
   puts
   u = users.select { |user| user[:username] == username && user[:password] == password }
   if u.empty?
     puts 'User not found'
     puts
     puts "Press any to continue or press \'n\' to stop"
-    promt = gets.chomp
+    promt = gets.chomp.downcase
     if promt == 'n'
       puts 'Program will stop shortly'
       break
