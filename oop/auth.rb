@@ -32,6 +32,8 @@ def create_secure_users(list_of_users)
   list_of_users
 end
 
+new_user = create_secure_users(users) 
+puts new_user
 
 def authenticate(username, password, list_of_users)
   list_of_users.each do |user_record|
@@ -42,3 +44,5 @@ def authenticate(username, password, list_of_users)
 
   "Credentials not found"
 end
+
+p authenticate('heisenberg', 'password5', new_user )
