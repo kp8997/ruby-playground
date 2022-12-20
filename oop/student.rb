@@ -1,14 +1,16 @@
+require_relative 'auth_instance'
+# Student
 class Student
-
+  include AuthInstance
   attr_accessor :first_name, :last_name, :email, :username, :password
+
   # attr_reader
   # attr_writer
-
-  @first_name
-  @last_name
-  @email
-  @username
-  @password 
+  # @first_name
+  # @last_name
+  # @email
+  # @username
+  # @password
 
   # constructor
   def initialize(first_name, last_name, email, username, password)
@@ -37,10 +39,12 @@ class Student
   #   @last_name = name
   # end
 
-  def to_s()
+  def to_s
     "Fullname is #{@first_name} #{@last_name}"
   end
 end
 
 tom = Student.new('Tom', 'Bettercourt', 'bettercourt1@example.com', 'beer1', 'password')
 puts tom
+hash_password = tom.create_hash_digest(tom.password)
+puts hash_password

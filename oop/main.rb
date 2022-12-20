@@ -1,9 +1,7 @@
-require_relative 'auth' # module name
+require_relative 'auth' # file name
 
 # $LOAD_PATH << "." # path to the file
 # require "auth" # file name
-
-
 users = [
   { username: 'mashrur', password: 'password1' },
   { username: 'jack', password: 'password2' },
