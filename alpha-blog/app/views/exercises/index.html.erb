@@ -1,0 +1,19 @@
+<h2>List of Exercises</h2>
+
+<table class="exercises">
+  <thead>
+    <tr>
+      <td>Question</td>
+      <td>Answer</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exercises.each do |ex| %>
+      <tr>
+      <td><%= ex.question %></td>
+      <td><%= ex.answer %></td>
+      <td>Placeholder</td>
+      </tr>
+    <% end %>
+</table>

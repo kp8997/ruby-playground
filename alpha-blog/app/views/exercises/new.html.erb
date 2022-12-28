@@ -1,0 +1,18 @@
+<h3>Create a new exercise task</h3>
+# exercise_path equal to /exercises
+<%= form_with scope: :exercise, url: exercises_path, local: true do |f|%>
+  <p>
+    <%= f.label :question%><br/>
+    <%= f.text_field :question%>
+  </p>
+
+  <p>
+    <%= f.label :answer%><br/>
+    <%= f.text_field :answer%>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+# Ex:- scope :active, -> {where(:active => true)} %>
