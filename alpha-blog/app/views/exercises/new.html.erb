@@ -1,13 +1,5 @@
 <h3>Create a new exercise task</h3>
 # exercise_path equal to /exercises
-  <%# <% if @exercise.errors.any? %> %>
-    <%# <ul> %>
-      <%# <% @exercise.errors.full_messages.each do |message| %> %>
-        <%# <li><span style="color: red;"><%= message %></span></li> %>
-      <%# <% end %> %>
-    <%# </ul> %>
-  <%# <% end %> %>
-
   <% if @exercise && @exercise.errors.any?%>
     <h2>The following errors prevented the exercise from being save</h2>
     <ul style="width: 50%">

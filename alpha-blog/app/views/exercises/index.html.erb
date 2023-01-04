@@ -16,6 +16,7 @@
           <td><%= ex.question %></td>
           <td><%= ex.answer %></td>
           <td>
+            <%= link_to "Show", exercise_path(ex) %>
             <%= link_to "Edit", edit_exercise_path(ex) %>
             <%# equivalent exercise_path with %>
             <%= link_to "Delete", exercise_path(ex), method: :delete %>

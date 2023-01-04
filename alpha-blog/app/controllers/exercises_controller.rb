@@ -20,7 +20,8 @@ class ExercisesController < ApplicationController
   end
 
   def edit
-  
+    # byebug
+    @exercise = Exercise.find(params[:id])
   end
   # --- end GET methods ---
 
@@ -47,13 +48,20 @@ class ExercisesController < ApplicationController
   # PATCH | PUT methods
   def update
     @exercise = Exercise.find(params[:id])
-    @exercise[:question] = params[:question]
-    @exercise[:answer] = params[:answer]
-    if @exercise.save
+    if @exercise.update(params.require(:exercise).permit(:question, :answer, :update_at))
+      flash[:notice] = 'Exercise was updated successfully'
       redirect_to exercises_path(@exercise)
     else
-      # redirect_to edit_exercise_path(@exercise)
+      render 'edit', status: :ok
     end
+    # @exercise[:question] = params[:question]
+    # @exercise[:answer] = params[:answer]
+    # if @exercise.save
+    #   redirect_to exercises_path(@exercise)
+    # else
+    #   # redirect_to edit_exercise_path(@exercise)
+    #   render 'edit', status: :ok
+    # end
   end
   # --- end PATCH | PUT methods ---
 
@@ -61,7 +69,7 @@ class ExercisesController < ApplicationController
   def destroy
     @exercise = Exercise.find(params[:id])
     @exercise.destroy
-    redirect_to exercises_path(@exercise)
+    redirect_to exercises_path
   end
   # --- end DELETE methods ---
 end
