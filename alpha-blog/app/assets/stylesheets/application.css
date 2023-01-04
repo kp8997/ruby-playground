@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  padding: 0;
+}
+
+body {
+  padding: 1rem;
+}

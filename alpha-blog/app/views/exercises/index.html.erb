@@ -6,7 +6,7 @@
       <td>Id</td>
       <td>Question</td>
       <td>Answer</td>
-      <td>Action</td>
+      <td colspan="3">Action</td>
     </tr>
   </thead>
   <tbody>
@@ -16,10 +16,14 @@
           <td><%= ex.question %></td>
           <td><%= ex.answer %></td>
           <td>
-            <%= link_to "Show", exercise_path(ex) %>
-            <%= link_to "Edit", edit_exercise_path(ex) %>
             <%# equivalent exercise_path with %>
-            <%= link_to "Delete", exercise_path(ex), method: :delete %>
+            <%= link_to "Show", exercise_path(ex) %>
+          </td>
+          <td>
+            <%= link_to "Edit", edit_exercise_path(ex) %>
+          </td>
+          <td>
+            <%= link_to "Delete", exercise_path(ex), method: :delete, data: {confirm: "Are you sure to continue"}  %>
           </td>
         </tr>
     <% end %>
