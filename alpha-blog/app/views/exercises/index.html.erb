@@ -3,6 +3,7 @@
 <table class="exercises">
   <thead>
     <tr>
+      <td>Id</td>
       <td>Question</td>
       <td>Answer</td>
       <td>Action</td>
@@ -10,10 +11,19 @@
   </thead>
   <tbody>
     <% @exercises.each do |ex| %>
-      <tr>
-      <td><%= ex.question %></td>
-      <td><%= ex.answer %></td>
-      <td>Placeholder</td>
-      </tr>
+        <tr>
+          <td><%= ex.id%></td>
+          <td><%= ex.question %></td>
+          <td><%= ex.answer %></td>
+          <td>
+            <%= link_to "Edit", edit_exercise_path(ex) %>
+            <%# equivalent exercise_path with %>
+            <%= link_to "Delete", exercise_path(ex), method: :delete %>
+          </td>
+        </tr>
     <% end %>
 </table>
+<br/>
+# new_exercise_path equal to /exercises/new
+<br/>
+<%= link_to "New Exercise Form", new_exercise_path %>

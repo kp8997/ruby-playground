@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to: 'pages#about'
   # get 'exercises/:id', to: 'exercises#fetch'
-  resources :articles, only: [:show]
-  resources :exercises, only: [:index, :new, :create]
+  resources :articles
+  resources :exercises, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   # resources :exercises # equal to CRUD for Exercise class  model
   # resources :exercises, only: [:show, :index, :new, :edit, :create, :update, :destroy]
 end
