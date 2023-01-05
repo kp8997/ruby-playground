@@ -1,16 +1,18 @@
 <h3>Create a new exercise task</h3>
-# exercise_path equal to /exercises
-  <% if @exercise && @exercise.errors.any?%>
-    <h2>The following errors prevented the exercise from being save</h2>
-    <ul style="width: 50%">
-      <% @exercise.errors.full_messages.each do |message| %>
-        <li style="list-style: none; background-color:red; padding: .5rem; margin-bottom: .5rem;">
-          <span style="color: white;"><strong><%= message %></strong></span>    
-        </li>
-      <%end%>
-    </ul>
-  <%end %>
-  
+<%= render 'exercises/form'%>
+
+<% 
+=begin%>
+<%if @exercise && @exercise.errors.any? %>
+  <% <h2>The following errors prevented the exercise from being save</h2> %>
+  <ul style="width: 50%">
+    <% @exercise.errors.full_messages.each do |message| %>
+      <li style="list-style: none; background-color:red; padding: .5rem; margin-bottom: .5rem;">
+        <span style="color: white;"><strong><%= message</strong></span>     %>
+      </li>
+     <% end %> %>
+  </ul>
+<%end %>
 <%= form_with scope: :exercise, url: exercises_path, local: true do |f| %>
   <p>
     <%= f.label :question %><br/>
@@ -24,6 +26,5 @@
     <%= f.submit %>
   </p>
 <% end %>
-
-<%= link_to 'Back to List', exercises_path %>
-# Ex:- scope :active, -> {where(:active => true)}     %>
+<% 
+=end%>
