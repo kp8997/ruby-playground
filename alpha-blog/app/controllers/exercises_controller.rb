@@ -34,7 +34,7 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.new(exercise_params)
     if @exercise.save
       flash[:notice] = 'Exercise was created successfully'
-      redirect_to exercise_path
+      redirect_to exercise_path(@exercise)
     else
       puts @exercise.errors.full_messages
       render 'new'
