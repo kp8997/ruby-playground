@@ -50,7 +50,7 @@ class ExercisesController < ApplicationController
     # @exercise = Exercise.find(params[:id])
     if @exercise.update(exercise_params)
       flash[:notice] = 'Exercise was updated successfully'
-      redirect_to exercises_path(@exercise)
+      redirect_to exercises_path()
     else
       render 'edit', status: :ok
     end
