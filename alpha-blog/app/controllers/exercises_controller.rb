@@ -34,7 +34,7 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.new(exercise_params)
     if @exercise.save
       flash[:notice] = 'Exercise was created successfully'
-      redirect_to exercise_path(@exercise)
+      redirect_to exercise_path
     else
       puts @exercise.errors.full_messages
       render 'new'
@@ -50,7 +50,7 @@ class ExercisesController < ApplicationController
     # @exercise = Exercise.find(params[:id])
     if @exercise.update(exercise_params)
       flash[:notice] = 'Exercise was updated successfully'
-      redirect_to exercises_path()
+      redirect_to exercises_path
     else
       render 'edit', status: :ok
     end
